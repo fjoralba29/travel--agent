@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* A beach/ocean-leaning palette, independent of any single logo: deep
+   ocean teal as the anchor, sunset coral as the primary accent, a
+   golden-sun yellow as the secondary accent, and a warm sandy off-white
+   instead of pure white. Swapping the logo later only means swapping the
+   image file — nothing here is tuned to its exact colors. Class names
+   (bg-forest, text-coral, etc.) stay as-is even though the hues moved
+   toward ocean tones, so no component markup needed to change here. */
+@theme {
+    --color-forest: #0b7285;
+    --color-forest-deep: #075364;
+    --color-coral: #ff6b4a;
+    --color-coral-deep: #e14a2e;
+    --color-butter: #ffc857;
+    --color-cream: #fcfbf8;
+    --color-ink: #0f2a30;
+}
+
+/* Fredoka: a rounded, friendly display face for headlines and badges.
+   Plus Jakarta Sans: a clean, warm workhorse for body copy and UI. */
+@theme inline {
+    --font-display: var(--font-fredoka), ui-rounded, system-ui, sans-serif;
+    --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+    body {
+        background: var(--color-cream);
+        color: var(--color-ink);
+        font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--font-fredoka), ui-rounded, system-ui, sans-serif;
+    }
+
+    ::selection {
+        background: var(--color-butter);
+        color: var(--color-ink);
+    }
+
+    :focus-visible {
+        outline: 3px solid var(--color-coral);
+        outline-offset: 3px;
+    }
+}
+
+/* Organic blob mask for photos — a hand-drawn feel instead of a rectangle
+   or perfect circle. */
+.blob-mask {
+    border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+}
+
+.blob-mask-alt {
+    border-radius: 62% 38% 41% 59% / 52% 44% 56% 48%;
+}
+
+@keyframes float-slow {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-14px) rotate(3deg);
+    }
+}
+
+.animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes gallery-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% / 2));
+    }
+}
+
+.animate-gallery-scroll {
+    animation: gallery-scroll linear infinite;
+    animation-duration: calc(var(--gallery-items) * 4s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-gallery-scroll,
+    .animate-float-slow {
+        animation: none;
+    }
+}
