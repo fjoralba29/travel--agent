@@ -16,8 +16,29 @@ export default function Hero() {
             id='start'
             className='relative isolate -mt-24 overflow-hidden bg-forest pb-20 pt-32 lg:-mt-28 lg:pb-28 lg:pt-40'
         >
-            {/* Decorative dot grid + plane, echoing the "travel" theme without
-                relying on any specific logo artwork */}
+            <Image
+                src='/images/hero/back-image.jpg'
+                alt=''
+                fill
+                priority
+                sizes='100vw'
+                className='-z-20 object-cover'
+            />
+            <div
+                aria-hidden='true'
+                className='absolute inset-0 -z-10 bg-gradient-to-br from-forest-deep/50 via-forest/20 to-coral-deep/15'
+            />
+
+            <div
+                aria-hidden='true'
+                className='absolute inset-0 -z-10 bg-gradient-to-r from-ink/55 via-ink/10 to-transparent'
+            />
+
+            <div
+                aria-hidden='true'
+                className='absolute inset-0 -z-10 bg-gradient-to-t from-ink/40 via-transparent to-transparent'
+            />
+
             <div
                 aria-hidden='true'
                 className='absolute inset-0 opacity-[0.07]'
@@ -92,13 +113,16 @@ export default function Hero() {
                             />
                         </div>
 
-                        <div className='absolute -left-8 bottom-6 h-32 w-32 overflow-hidden rounded-full ring-4 ring-forest sm:h-40 sm:w-40'>
+                        <div className='absolute -left-8 bottom-6 flex h-28 w-28 flex-col items-center justify-center rounded-full bg-white p-3 text-center shadow-xl ring-2 ring-forest sm:h-28 sm:w-28'>
+                            <p className='font-display text-xs font-semibold leading-tight text-forest'>
+                                Partner von Amondo
+                            </p>
                             <Image
-                                src='/images/hero/hero1.jpg'
-                                alt='Reiseziel'
-                                fill
-                                sizes='160px'
-                                className='object-cover'
+                                src='/logo_site.svg'
+                                alt='Amondo Logo'
+                                width={100}
+                                height={100}
+                                className='mt-1.5 h-8 w-auto'
                             />
                         </div>
 

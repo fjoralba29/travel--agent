@@ -2,12 +2,6 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import WaveDivider from "@/components/ui/WaveDivider";
 
-/**
- * Closing call to action shared by the About, Expertise and Reports pages.
- * `dividerFrom` should match the background of whichever section comes
- * right before this one (bg-cream by default; pass "bg-forest" when the
- * page's previous section is already forest, so the seam stays invisible).
- */
 export default function CtaBand({
     dividerFrom = "bg-cream",
 }: {

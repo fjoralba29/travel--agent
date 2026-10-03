@@ -9,7 +9,6 @@ export default function SectionHeading({
     eyebrow?: string;
     title: string;
     className?: string;
-    /** "dark" is for headings that sit on the forest background */
     tone?: "light" | "dark";
 }) {
     const dark = tone === "dark";

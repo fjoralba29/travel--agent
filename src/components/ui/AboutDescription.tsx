@@ -1,8 +1,3 @@
-/**
- * Structured bio layout: a larger lead paragraph, the middle paragraphs
- * as a divided list (thin rule between each), and the closing paragraph
- * pulled out as a quote. Everything renders at once — no expand/collapse.
- */
 export default function AboutDescription({
     paragraphs,
 }: {

@@ -12,8 +12,6 @@ const rows = [
     },
 ];
 
-/** Used inside the colored panel of the Contact section — light text on a
- * dark ocean background, not a set of white cards. */
 export default function ContactInfo() {
     return (
         <div className='space-y-5'>

@@ -13,9 +13,25 @@ export default function Expertise() {
     return (
         <section
             id='meine-expertise'
-            className='bg-forest py-20 sm:py-28'
+            className='relative isolate overflow-hidden bg-forest py-20 sm:py-28'
         >
-            <Container>
+            <Image
+                src='/images/hero/expertise-image.jpg'
+                alt=''
+                fill
+                sizes='100vw'
+                className='-z-20 object-cover'
+            />
+            <div
+                aria-hidden='true'
+                className='absolute inset-0 -z-10 bg-gradient-to-br from-forest-deep/80 via-forest/40 to-coral-deep/30  '
+            />
+            <div
+                aria-hidden='true'
+                className='absolute inset-0 -z-10 bg-gradient-to-t from-ink/70 via-transparent to-ink/50'
+            />
+
+            <Container className='relative'>
                 <div className='mx-auto max-w-xl text-center'>
                     <p className='inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 font-display text-sm font-semibold text-butter'>
                         <span className='h-2 w-2 rounded-full bg-butter' />

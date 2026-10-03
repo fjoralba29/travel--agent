@@ -95,7 +95,6 @@ export default async function TravelReportPage({
                 />
 
                 <Container>
-                    {/* Meta row: agent + date + reading time */}
                     <div className='flex flex-col gap-6 border-b border-forest/10 py-8 sm:flex-row sm:items-center sm:justify-between'>
                         <div className='flex items-center gap-3'>
                             <div className='relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-4 ring-butter'>

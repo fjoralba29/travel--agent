@@ -15,7 +15,6 @@ export default function PageHeader({
     title: string;
     subtitle?: string;
     currentLabel: string;
-    /** Optional background photo path, e.g. "/images/hero/agent1.jpeg" */
     image?: string;
 }) {
     return (

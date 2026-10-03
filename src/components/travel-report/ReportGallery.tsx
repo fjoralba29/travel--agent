@@ -21,7 +21,6 @@ export default function ReportGallery({
                         key={`${src}-${index}`}
                         className='relative aspect-square w-56 shrink-0 overflow-hidden rounded-[1.5rem] shadow-md ring-4 ring-white sm:w-64'
                     >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src={src}
                             alt={`${alt} — photo ${(index % images.length) + 1}`}

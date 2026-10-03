@@ -1,12 +1,5 @@
 @import "tailwindcss";
 
-/* A beach/ocean-leaning palette, independent of any single logo: deep
-   ocean teal as the anchor, sunset coral as the primary accent, a
-   golden-sun yellow as the secondary accent, and a warm sandy off-white
-   instead of pure white. Swapping the logo later only means swapping the
-   image file — nothing here is tuned to its exact colors. Class names
-   (bg-forest, text-coral, etc.) stay as-is even though the hues moved
-   toward ocean tones, so no component markup needed to change here. */
 @theme {
     --color-forest: #0b7285;
     --color-forest-deep: #075364;
@@ -17,8 +10,6 @@
     --color-ink: #0f2a30;
 }
 
-/* Fredoka: a rounded, friendly display face for headlines and badges.
-   Plus Jakarta Sans: a clean, warm workhorse for body copy and UI. */
 @theme inline {
     --font-display: var(--font-fredoka), ui-rounded, system-ui, sans-serif;
     --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
@@ -49,8 +40,6 @@
     }
 }
 
-/* Organic blob mask for photos — a hand-drawn feel instead of a rectangle
-   or perfect circle. */
 .blob-mask {
     border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
 }

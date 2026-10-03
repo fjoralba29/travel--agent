@@ -20,7 +20,6 @@ export default function TravelReportCard({ report }: { report: TravelReport }) {
                     />
                 </div>
 
-                {/* Location badge, floating over the seam between photo and card */}
                 <div className='absolute right-5 top-[calc(75%-1.6rem)] flex h-12 w-12 items-center justify-center rounded-full bg-coral text-white shadow-lg ring-4 ring-white'>
                     <MapPin
                         className='h-5 w-5'

@@ -23,9 +23,6 @@ export default function TravelReports() {
                     className='mx-auto text-center'
                 />
 
-                {/* Expanding panel gallery: the first destination is open by
-                    default; hovering (or focusing) another one opens that
-                    one instead. */}
                 <div
                     onMouseLeave={() => setActive(0)}
                     className='mt-14 flex h-[26rem] flex-col gap-3 overflow-hidden rounded-[2rem] shadow-xl sm:h-[30rem] sm:flex-row'
