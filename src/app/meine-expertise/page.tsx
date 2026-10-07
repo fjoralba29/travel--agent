@@ -4,6 +4,7 @@ import Container from '@/components/ui/Container'
 import PageHeader from '@/components/layout/PageHeader'
 import CtaBand from '@/components/ui/CtaBand'
 import { expertiseItems } from '@/data/expertise'
+import Certificates from '@/components/sections/Certificates'
 
 const tints = [
   'from-forest/10 via-forest/50 to-forest/95',
@@ -24,9 +25,9 @@ export default function Expertise() {
         currentLabel='Meine Expertise'
         image='/images/reports/santorini/santorini12.jpeg'
       />
-
+      <Certificates />
       {/* INTRO */}
-      <section className='bg-cream py-16 sm:py-24'>
+      <section className='bg-white py-16 sm:py-24'>
         <Container>
           <div className='grid gap-8 lg:grid-cols-2 lg:items-end'>
             <div>
@@ -48,7 +49,7 @@ export default function Expertise() {
       </section>
 
       {/* DESTINATION-STYLE CARDS */}
-      <section className='bg-cream pb-20 sm:pb-28'>
+      <section className='bg-white pb-20 sm:pb-28'>
         <Container>
           <div className='mx-auto grid max-w-7xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4'>
             {expertiseItems.map((item, index) => (
