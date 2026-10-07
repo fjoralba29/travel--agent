@@ -31,20 +31,20 @@ export default function Certificates() {
                 href={cert.image}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='group flex items-center gap-6 p-6 transition-colors hover:bg-forest/5 sm:p-8'
+                className='group relative flex flex-col items-center gap-4 p-6 text-center transition-colors hover:bg-forest/5 sm:flex-row sm:items-center sm:gap-6 sm:p-8 sm:text-left'
               >
-                <div className='relative aspect-[5/7] w-32 shrink-0 overflow-hidden rounded-xl border border-forest/80 bg-white  shadow-sm sm:w-44'>
+                <div className='relative aspect-[5/7] w-32 shrink-0 overflow-hidden rounded-xl border border-forest/80 bg-white shadow-sm sm:w-36 lg:w-44'>
                   <Image
                     src={cert.image}
                     alt={`${cert.title} – ${cert.issuer}`}
                     fill
                     sizes='176px'
-                    className='object-contain p-1.5  rounded-xl'
+                    className='rounded-xl object-contain p-1.5'
                   />
                 </div>
 
                 <div className='min-w-0 flex-1'>
-                  <div className='flex items-center gap-2'>
+                  <div className='flex items-center justify-center gap-2 sm:justify-start'>
                     <Award className='h-4 w-4 shrink-0 text-coral' aria-hidden='true' />
                     <p className='font-display text-lg font-semibold text-forest'>{cert.title}</p>
                   </div>
@@ -54,7 +54,7 @@ export default function Certificates() {
                   </p>
                 </div>
 
-                <span className='flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-forest/5 text-forest transition-colors group-hover:bg-forest group-hover:text-white'>
+                <span className='absolute right-6 top-6 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-forest/5 text-forest transition-colors group-hover:bg-forest group-hover:text-white sm:static sm:ml-auto sm:right-auto sm:top-auto'>
                   <ArrowUpRight className='h-4 w-4' aria-hidden='true' />
                 </span>
               </a>
