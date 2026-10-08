@@ -20,4 +20,10 @@ export const certificates: Certificate[] = [
     date: 'September 2026',
     image: '/images/certificates/certificate_2.png',
   },
+  {
+    title: 'Urlaubsprofi',
+    issuer: 'Mein Sehiff TUI Cruises, powered by Amondo',
+    date: 'Juli 2026',
+    image: '/images/certificates/certificate_3.png',
+  },
 ]
