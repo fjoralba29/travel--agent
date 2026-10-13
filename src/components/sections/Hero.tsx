@@ -145,6 +145,15 @@ export default function Hero() {
                     </div>
                 </div>
             </Container>
+            {/* <div className='absolute bottom-2 right-4 z-1 hidden w-40 sm:block lg:w-56'>
+                <Image
+                    src='/images/hero/genie.png'
+                    alt='Olesja Reise Genie'
+                    width={400}
+                    height={400}
+                    className='animate-float-slow w-full drop-shadow-2xl opacity-30'
+                />
+            </div> */}
 
             <WaveDivider
                 bg=''

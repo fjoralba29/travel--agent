@@ -10,7 +10,7 @@ export default function About() {
     return (
         <section
             id='uber-mich'
-            className='py-20 sm:py-28'
+            className='py-20 sm:py-28 relative'
         >
             <Container>
                 <div className='grid items-center gap-14 lg:grid-cols-2 lg:gap-20'>
@@ -46,7 +46,14 @@ export default function About() {
                             Vernetzen Sie sich auf LinkedIn
                         </a>
                     </div>
-
+                    <Image
+                        src='/images/hero/lamp.png'
+                        alt=''
+                        width={80}
+                        height={80}
+                        aria-hidden='true'
+                        className='animate-float-slow absolute left-4 bottom-120 w-40 opacity-10 sm:w-28'
+                    />
                     {/* Quote + Photo */}
                     <div className='lg:order-2'>
                         <div className='relative mx-auto mt-8 aspect-[4/5] w-full max-w-md lg:mx-0 my-8 lg:ml-auto'>
@@ -59,7 +66,16 @@ export default function About() {
                                     className='object-cover'
                                 />
                             </div>
-                            <div className='absolute -bottom-5 -left-5 h-24 w-24 rounded-full bg-butter/70' />
+                            <div className='absolute -bottom-4 -left-20 p-4 h-24 w-24 rounded-full bg-forest/3 sm:h-44 sm:w-44'>
+                                {" "}
+                                <Image
+                                    src='/logo1.png'
+                                    alt={`Portrait of ${siteConfig.agentName}`}
+                                    fill
+                                    sizes='(min-width: 1024px) 400px, 90vw'
+                                    className='object-cover p-2'
+                                />
+                            </div>
                         </div>
                         <blockquote className='relative rounded-2xl bg-forest/5 py-6 pl-16 pr-6'>
                             <Quote
@@ -78,6 +94,15 @@ export default function About() {
                     </div>
                 </div>
             </Container>
+            <div className='absolute bottom-0 right-4 z-1 hidden w-40 sm:block lg:w-56'>
+                <Image
+                    src='/images/hero/genie.png'
+                    alt='Olesja Reise Genie'
+                    width={400}
+                    height={400}
+                    className='animate-float-slow w-full drop-shadow-2xl opacity-10'
+                />
+            </div>
         </section>
     );
 }

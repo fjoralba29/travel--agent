@@ -16,7 +16,7 @@ export default function Footer() {
         <div>
           <div className='flex h-14 w-14 items-center justify-center rounded-full bg-white p-2'>
             <Image
-              src='/logo.png'
+              src='/logo1.png'
               alt={siteConfig.name}
               width={150}
               height={164}
