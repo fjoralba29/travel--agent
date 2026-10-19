@@ -2,29 +2,66 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2, CheckCircle2, XCircle } from "lucide-react";
 import FormField from "@/components/ui/FormField";
-import { siteConfig } from "@/data/site-config";
+
+type Status = "idle" | "loading" | "success" | "error";
 
 export default function ContactForm() {
     const [accepted, setAccepted] = useState(false);
+    const [status, setStatus] = useState<Status>("idle");
 
-    function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
+        setStatus("loading");
 
-        const subject = `Inquiry: ${data.get("regarding") || "Travel request"}`;
-        const body = [
-            `Name: ${data.get("firstName")} ${data.get("lastName")}`,
-            `Email: ${data.get("email")}`,
-            `Phone: ${data.get("phone")}`,
-            "",
-            `${data.get("message")}`,
-        ].join("\n");
+        const form = event.currentTarget;
+        const data = new FormData(form);
+        const payload = Object.fromEntries(data.entries());
 
-        window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
-            subject,
-        )}&body=${encodeURIComponent(body)}`;
+        try {
+            const res = await fetch("/contact.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+
+            if (!res.ok) throw new Error("request_failed");
+
+            const result = await res.json();
+            if (!result.success) throw new Error(result.error || "unknown");
+
+            setStatus("success");
+            form.reset();
+            setAccepted(false);
+        } catch {
+            setStatus("error");
+        }
+    }
+
+    if (status === "success") {
+        return (
+            <div className='flex flex-col items-center gap-3 py-10 text-center'>
+                <CheckCircle2
+                    className='h-12 w-12 text-forest'
+                    aria-hidden='true'
+                />
+                <p className='font-display text-xl font-semibold text-forest'>
+                    Nachricht gesendet!
+                </p>
+                <p className='font-sans text-sm text-ink/60'>
+                    Danke für deine Anfrage — ich melde mich schnellstmöglich
+                    bei dir.
+                </p>
+                <button
+                    type='button'
+                    onClick={() => setStatus("idle")}
+                    className='mt-2 font-display text-sm font-semibold text-coral-deep underline'
+                >
+                    Weitere Nachricht senden
+                </button>
+            </div>
+        );
     }
 
     return (
@@ -94,17 +131,35 @@ export default function ContactForm() {
                 </span>
             </label>
 
-            <button
-                type='submit'
-                disabled={!accepted}
-                className='inline-flex items-center gap-3 rounded-full bg-forest py-1.5 pl-6 pr-1.5 font-display text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40'
-            >
-                Anfrage senden
-                <span className='flex h-9 w-9 items-center justify-center rounded-full bg-coral'>
-                    <ArrowRight
-                        className='h-4 w-4'
+            {status === "error" && (
+                <p className='flex items-center gap-2 font-sans text-sm text-red-600'>
+                    <XCircle
+                        className='h-4 w-4 shrink-0'
                         aria-hidden='true'
                     />
+                    Da ist etwas schiefgelaufen. Bitte versuche es erneut oder
+                    schreibe direkt eine E-Mail.
+                </p>
+            )}
+
+            <button
+                type='submit'
+                disabled={!accepted || status === "loading"}
+                className='inline-flex items-center gap-3 rounded-full bg-forest py-1.5 pl-6 pr-1.5 font-display text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40'
+            >
+                {status === "loading" ? "Wird gesendet..." : "Anfrage senden"}
+                <span className='flex h-9 w-9 items-center justify-center rounded-full bg-coral'>
+                    {status === "loading" ? (
+                        <Loader2
+                            className='h-4 w-4 animate-spin'
+                            aria-hidden='true'
+                        />
+                    ) : (
+                        <ArrowRight
+                            className='h-4 w-4'
+                            aria-hidden='true'
+                        />
+                    )}
                 </span>
             </button>
         </form>

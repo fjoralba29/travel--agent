@@ -10,10 +10,10 @@ export default function About() {
     return (
         <section
             id='uber-mich'
-            className='py-20 sm:py-28 relative'
+            className='relative py-12 sm:py-20 lg:py-28'
         >
             <Container>
-                <div className='grid items-center gap-14 lg:grid-cols-2 lg:gap-20'>
+                <div className='grid min-w-0 items-center gap-8 sm:gap-14 lg:grid-cols-2 lg:gap-20'>
                     {/* Text */}
                     <div className='lg:order-1'>
                         <SectionHeading
@@ -55,34 +55,35 @@ export default function About() {
                         className='animate-float-slow absolute left-4 bottom-120 w-40 opacity-10 sm:w-28'
                     />
                     {/* Quote + Photo */}
-                    <div className='lg:order-2'>
-                        <div className='relative mx-auto mt-8 aspect-[4/5] w-full max-w-md lg:mx-0 my-8 lg:ml-auto'>
+                    <div className='lg:order-2 min-w-0'>
+                        <div className='relative mx-auto mt-6 mb-8 aspect-[4/4.5] w-full max-w-sm sm:aspect-[4/5] lg:mt-8 lg:mb-8 lg:aspect-[4/5] lg:max-w-md lg:mx-0 lg:ml-auto'>
                             <div className='blob-mask-alt absolute inset-0 overflow-hidden shadow-xl'>
                                 <Image
                                     src='/images/hero/agent1.jpeg'
                                     alt={`Portrait of ${siteConfig.agentName}`}
                                     fill
                                     sizes='(min-width: 1024px) 400px, 90vw'
-                                    className='object-cover'
+                                    className='object-cover object-center'
                                 />
                             </div>
-                            <div className='absolute -bottom-4 -left-20 p-4 h-24 w-24 rounded-full bg-forest/3 sm:h-44 sm:w-44'>
-                                {" "}
+
+                            <div className='absolute -bottom-3 -left-3 z-10 h-16 w-16 rounded-full bg-forest/5 p-2 sm:-bottom-4 sm:-left-10 sm:h-28 sm:w-28 lg:-left-20 lg:h-44 lg:w-44'>
                                 <Image
                                     src='/logo1.png'
-                                    alt={`Portrait of ${siteConfig.agentName}`}
+                                    alt='Travel logo'
                                     fill
-                                    sizes='(min-width: 1024px) 400px, 90vw'
-                                    className='object-cover p-2'
+                                    sizes='(min-width: 1024px) 176px, 64px'
+                                    className='object-contain p-2'
                                 />
                             </div>
                         </div>
-                        <blockquote className='relative rounded-2xl bg-forest/5 py-6 pl-16 pr-6'>
+
+                        <blockquote className='relative rounded-2xl bg-forest/5 py-5 pl-12 pr-4 sm:py-6 sm:pl-16 sm:pr-6'>
                             <Quote
-                                className='absolute left-5 top-5 h-8 w-8 text-coral/40'
+                                className='absolute left-3 top-5 h-6 w-6 text-coral/40 sm:left-5 sm:h-8 sm:w-8'
                                 aria-hidden='true'
                             />
-                            <p className='font-display text-xl font-medium italic leading-snug text-forest'>
+                            <p className='font-display text-base font-medium italic leading-relaxed text-forest sm:text-xl sm:leading-snug'>
                                 „Kurz gesagt: Ich liebe es, neue Erfahrungen zu
                                 sammeln, die Welt mit offenen Augen zu entdecken
                                 und meine Begeisterung für besondere Orte mit

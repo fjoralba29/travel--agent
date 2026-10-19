@@ -6,3 +6,7 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Custom 404 page (generated from not-found.tsx)
 ErrorDocument 404 /404.html
+
+<FilesMatch "mail-config\.php$">
+    Require all denied
+</FilesMatch>

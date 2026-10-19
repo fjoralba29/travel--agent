@@ -9,7 +9,8 @@ export const siteConfig = {
     agentName: "Olesja Dervishi",
     agentTitle: "Urlaubsprofi",
     linkedinUrl: " https://www.linkedin.com/in/olesja-dervishi-607a4b18/",
-    email: "olesja@reise-genie.de, olesja.dervishi@amondo-reiseberater.de",
+    email: "olesja@reise-genie.de",
+    //, olesja.dervishi@amondo-reiseberater.de",
     phone: "015150331351",
     address: {
         street: "Main Street 29B",
