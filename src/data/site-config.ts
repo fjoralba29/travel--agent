@@ -1,6 +1,6 @@
 // to do description, phone, msg
 export const siteConfig = {
-    name: "Olesja Dervishi",
+    name: "Olesja Reise Genie",
     url: "https://www.reise-genie.de",
     description:
         "Persönliche Reiseberatung. Unabhängig. Kompetent. Ohne Mehrkosten.",
