@@ -11,6 +11,9 @@ export default function ContactForm() {
     const [accepted, setAccepted] = useState(false);
     const [status, setStatus] = useState<Status>("idle");
 
+    // at the top of ContactForm.tsx
+    const CONTACT_ENDPOINT =
+        process.env.NEXT_PUBLIC_CONTACT_ENDPOINT || "/contact.php";
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
         setStatus("loading");
@@ -20,7 +23,7 @@ export default function ContactForm() {
         const payload = Object.fromEntries(data.entries());
 
         try {
-            const res = await fetch("/contact.php", {
+            const res = await fetch(CONTACT_ENDPOINT, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
