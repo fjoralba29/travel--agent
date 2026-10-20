@@ -37,7 +37,7 @@ export async function POST(request: Request) {
 
     try {
         const { error } = await resend.emails.send({
-            from: "Reise Genie Kontaktformular <kontakt@reise-genie.de>",
+            from: "Reise Genie Kontaktformular <olesja@reise-genie.de>",
             to: "olesja@reise-genie.de",
             replyTo: email,
             subject: `Anfrage: ${regarding || "Reiseanfrage"}`,
