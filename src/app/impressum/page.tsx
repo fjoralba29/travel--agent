@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LegalLayout from "@/components/layout/LegalLayout";
 import { siteConfig } from "@/data/site-config";
 
@@ -16,46 +17,76 @@ export default function ImprintPage() {
             title='Impressum'
             currentLabel='Impressum'
         >
-            <h2>Angaben gemäß § 5 DDG</h2>
+            <h2>Anbieter der Website</h2>
             <p>
                 {siteConfig.agentName}
-                <br />
-                <mark>[Firmenname / Rechtsform, falls vorhanden]</mark>
                 <br />
                 {address.street}
                 <br />
                 {address.postalCode} {address.city}
+                <br />
+                Baden-Württemberg, Deutschland
             </p>
-
-            <h2>Kontakt</h2>
             <p>
                 Telefon:{" "}
                 <a href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a>
                 <br />
+                Website: <a href={siteConfig.url}>{siteConfig.url}</a>
+                <br />
                 E-Mail:{" "}
                 <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            </p>
-
-            <h2>Umsatzsteuer-ID</h2>
-            <p>
-                Umsatzsteuer-Identifikationsnummer gemäß § 27a
-                Umsatzsteuergesetz:
                 <br />
-                <mark>
-                    [USt-IdNr. eintragen oder Abschnitt entfernen, falls nicht
-                    vorhanden]
-                </mark>
+                E-Mail (amondo):{" "}
+                <a href='mailto:olesja.dervishi@amondo-reiseberater.de'>
+                    olesja.dervishi@amondo-reiseberater.de
+                </a>
+            </p>
+            <p>
+                Unternehmensform: Einzelunternehmen
+                <br />
+                Berufs- oder Tätigkeitsbezeichnung: Reiseberaterin
             </p>
 
-            <h2>Weitere Pflichtangaben</h2>
+            <h2>Tätigkeit als Reisevermittlerin</h2>
             <p>
-                <mark>
-                    [Falls Sie als selbstständige Reiseberaterin für ein
-                    Partnerunternehmen tätig sind, hier die vorgeschriebenen
-                    Angaben ergänzen, z. B. Name und Anschrift des
-                    Partnerunternehmens, Registergericht und Registernummer,
-                    Erlaubnisse oder Aufsichtsbehörde.]
-                </mark>
+                {siteConfig.agentName} ist als selbstständige Reiseberaterin
+                Partnerin von amondo – Die Urlaubsprofis. Weitere Informationen
+                zu amondo finden Sie unter{" "}
+                <a
+                    href='https://www.amondo-urlaubsprofis.de'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    https://www.amondo-urlaubsprofis.de
+                </a>
+                .
+            </p>
+            <p>
+                Reiseleistungen werden vermittelt. Vertragspartner bei einer
+                Buchung ist der jeweilige Reiseveranstalter bzw.
+                Leistungsträger; es gelten dessen Reise- und
+                Geschäftsbedingungen.
+            </p>
+
+            <h2>Streitbeilegung</h2>
+            <p>
+                Hinweis zur Verbraucherinformation gemäß DSA (Verordnung (EU)
+                2022/2065): Bei verbraucherrechtlichen Problemen können Sie auf
+                der Website „Ihr Europa“
+                (https://europa.eu/youreurope/citizens/consumers/) nützliche
+                Beratung finden. Darüber hinaus können Sie sich an eine
+                außergerichtliche Streitbeilegungsstelle wenden, die gemäß
+                Artikel 21 der Verordnung (EU) 2022/2065 (Gesetz über digitale
+                Dienste) zertifiziert ist. Eine Übersicht über diese Stellen
+                stellt die Europäische Kommission unter folgendem Link bereit:
+                https://digital-strategy.ec.europa.eu/de/policies/dsa-out-court-dispute-settlement.
+            </p>
+            <p>
+                Information zur alternativen Streitbeilegung nach § 36
+                Verbraucherstreitbeilegungsgesetz – VSBG (abrufbar unter
+                https://www.gesetze-im-internet.de/vsbg/): Wir sind weder bereit
+                noch verpflichtet, an einem Streitbeilegungsverfahren vor einer
+                Verbraucherschlichtungsstelle teilzunehmen.
             </p>
 
             <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
@@ -67,74 +98,53 @@ export default function ImprintPage() {
                 {address.postalCode} {address.city}
             </p>
 
-            <h2>Verbraucherstreitbeilegung</h2>
+            <h2>Disclaimer</h2>
+            <h3>Haftung</h3>
             <p>
-                <mark>[Bitte prüfen und anpassen:]</mark> Wir sind nicht bereit
-                oder verpflichtet, an Streitbeilegungsverfahren vor einer
-                Verbraucherschlichtungsstelle teilzunehmen.
+                Wir sind für die Inhalte unserer Internetseiten nach den
+                Maßgaben der allgemeinen Gesetze, insbesondere nach § 7 Abs. 1
+                des Digitale-Dienste-Gesetzes (DDG), verantwortlich. Alle
+                Inhalte werden mit der gebotenen Sorgfalt und nach bestem Wissen
+                erstellt. Soweit wir auf unseren Internetseiten mittels
+                Hyperlink auf Internetseiten Dritter verweisen, können wir keine
+                Gewähr für die fortwährende Aktualität, Richtigkeit und
+                Vollständigkeit der verlinkten Inhalte übernehmen, da diese
+                Inhalte außerhalb unseres Verantwortungsbereichs liegen und wir
+                auf die zukünftige Gestaltung keinen Einfluss haben. Sollten aus
+                Ihrer Sicht Inhalte gegen geltendes Recht verstoßen oder
+                unangemessen sein, teilen Sie uns dies bitte mit.
+            </p>
+            <p>
+                Die rechtlichen Hinweise auf dieser Seite sowie alle Fragen und
+                Streitigkeiten im Zusammenhang mit der Gestaltung dieser
+                Internetseite unterliegen dem Recht der Bundesrepublik
+                Deutschland.
             </p>
 
-            <h2>Haftung für Inhalte</h2>
+            <h3>Datenschutz</h3>
             <p>
-                Als Diensteanbieterin bin ich gemäß § 7 Abs. 1 DDG für eigene
-                Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
-                verantwortlich. Nach §§ 8 bis 10 DDG bin ich als
-                Diensteanbieterin jedoch nicht verpflichtet, übermittelte oder
-                gespeicherte fremde Informationen zu überwachen oder nach
-                Umständen zu forschen, die auf eine rechtswidrige Tätigkeit
-                hinweisen.
-            </p>
-            <p>
-                Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
-                Informationen nach den allgemeinen Gesetzen bleiben hiervon
-                unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem
-                Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.
-                Bei Bekanntwerden entsprechender Rechtsverletzungen werde ich
-                diese Inhalte umgehend entfernen.
+                Unsere Datenschutzhinweise finden Sie unter{" "}
+                <Link href='/datenschutz'>{siteConfig.url}/datenschutz</Link>.
             </p>
 
-            <h2>Haftung für Links</h2>
+            <h3>Urheberrechtshinweis</h3>
             <p>
-                Dieses Angebot enthält Links zu externen Websites Dritter, auf
-                deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für
-                diese fremden Inhalte auch keine Gewähr übernehmen. Für die
-                Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
-                oder Betreiber der Seiten verantwortlich.
-            </p>
-            <p>
-                Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf
-                mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren
-                zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente
-                inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne
-                konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.
-                Bei Bekanntwerden von Rechtsverletzungen werde ich derartige
-                Links umgehend entfernen.
-            </p>
-
-            <h2>Urheberrecht</h2>
-            <p>
-                Die von mir erstellten Inhalte und Werke auf diesen Seiten
-                unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
-                Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb
-                der Grenzen des Urheberrechtes bedürfen der schriftlichen
-                Zustimmung der Urheberin. Downloads und Kopien dieser Seite sind
-                nur für den privaten, nicht kommerziellen Gebrauch gestattet.
-            </p>
-            <p>
-                Soweit Inhalte auf dieser Seite nicht von mir erstellt wurden,
-                werden die Urheberrechte Dritter beachtet. Sollten Sie trotzdem
-                auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um
-                einen entsprechenden Hinweis. Bei Bekanntwerden von
-                Rechtsverletzungen werde ich derartige Inhalte umgehend
-                entfernen.
+                Die auf unserer Internetseite vorhandenen Texte, Bilder, Fotos,
+                Videos oder Grafiken unterliegen in der Regel dem Schutz des
+                Urheberrechts. Jede unberechtigte Verwendung (insbesondere die
+                Vervielfältigung, Bearbeitung oder Verbreitung) dieser
+                urheberrechtsgeschützten Inhalte ist daher untersagt. Wenn Sie
+                beabsichtigen, diese Inhalte oder Teile davon zu verwenden,
+                kontaktieren Sie uns bitte im Voraus unter den oben stehenden
+                Angaben. Soweit wir nicht selbst Inhaber der benötigten
+                urheberrechtlichen Nutzungsrechte sein sollten, bemühen wir uns,
+                einen Kontakt zum Berechtigten zu vermitteln.
             </p>
 
             <h2>Bildnachweise</h2>
             <p>
-                <mark>
-                    [Quellen der verwendeten Fotos angeben, z. B. eigene
-                    Aufnahmen, Name der Bildagentur / Fotograf:in und Lizenz.]
-                </mark>
+                Die in den Reiseberichten verwendeten Fotos sowie die
+                Porträtfotos sind eigene Aufnahmen von {siteConfig.agentName}.
             </p>
         </LegalLayout>
     );

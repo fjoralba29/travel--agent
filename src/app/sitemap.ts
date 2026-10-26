@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "travel-reports",
         "expertise",
         "contact",
-        "imprint",
+        "impressum",
         "data-protection",
     ].map((path) => ({
         url: `${siteConfig.url}/${path}`.replace(/\/$/, "") + "/",
