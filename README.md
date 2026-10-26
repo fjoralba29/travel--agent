@@ -34,3 +34,32 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+**Project details**
+
+public
+
+- images: ndarja e imazheve sipas perdorimit
+- .htaccess: host ne https, not found redirects
+- contact.php: versioni php i formes per te derguar contact formen direkt ne email ne ionos jo permes resend (meqenese hostin e kemi bere ne vercel perdorim resend, vercel nuk funksionon me php)
+- other project images
+
+src
+
+-app
+
+-api: api i perdorur per te derguar formen e contact permes resend ne email
+
+- datenschutz, impressum, kontakt, meine-expertise, meine-reiseberichte, uber-mich jane faqet perkatese dhe emrat percatojne dhe url (psh. reise-genie.de/impressum)
+
+- page.tsx eshte homepage
+
+- components: te gjithe componentet e faqes qe nga komponent te layout si header, footer, deri ne buttons, fields dhe design components
+
+- **Data**
+  -certificates: Objekti i certifikatave ku do te shtosh te gjitha certifikatat e reja
+  -expertise: Objeti i ekspertizave - travel-reports: Objekti i raporteve dhe permbajtjes se tyre
+
+-lib: funksione te perdorura
+
+-types: tipi i te dhenave per travel-reports
