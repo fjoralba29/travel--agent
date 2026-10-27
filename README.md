@@ -58,7 +58,8 @@ src
 
 - **Data**
   -certificates: Objekti i certifikatave ku do te shtosh te gjitha certifikatat e reja
-  -expertise: Objeti i ekspertizave - travel-reports: Objekti i raporteve dhe permbajtjes se tyre
+  -expertise: Objeti i ekspertizave
+    - travel-reports: Objekti i raporteve dhe permbajtjes se tyre
 
 -lib: funksione te perdorura
 
