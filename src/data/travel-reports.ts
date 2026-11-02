@@ -107,7 +107,7 @@ export const travelReports: TravelReport[] = [
         title: "Saranda",
         subtitle: "Meine Heimat am Ionischen Meer",
         description: "Meine Heimat am Ionischen Meer",
-        coverImage: "/images/reports/saranda/saranda.jpeg",
+        coverImage: "/images/reports/saranda/saranda1.jpeg",
         date: "23.09.2026",
         content: [
             "Saranda ist für mich nicht einfach ein Reiseziel – es ist meine Heimat. Jedes Mal, wenn ich zurückkomme und das tiefblaue Ionische Meer sehe, habe ich sofort das Gefühl, angekommen zu sein. Viele vergleichen die Landschaft mit Griechenland oder Kroatien. Für mich ist sie einzigartig. Vielleicht bin ich nicht ganz objektiv – aber ich finde, dass Saranda zu den schönsten Orten am Mittelmeer gehört.",
